@@ -1,0 +1,12 @@
+---
+ - name: service_restart
+   service: name={{ item }} state=restarted enabled=yes
+   with_items:
+    - httpd
+    - mariadb
+
+ - name: httpd_restart
+   service: name=httpd state=restarted enable=yes
+
+ - name: mariadb_restart
+   service: name=mariadb state=restarted enable=yes
